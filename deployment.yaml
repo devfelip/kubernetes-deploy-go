@@ -42,19 +42,21 @@ spec:
 
 
 ---
-apiVersion: extensions/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  #namespace: go
   name: go-ingress
   annotations:
     allow.http: "false"
 spec:
   rules:
-  - host: go.rancher.dev-ops-ninja.com
+  - host: "go.rancher.felipetechlab.com"
     http:
       paths:
-        - path: /
-          backend:
-            serviceName: go-service
-            servicePort: 80
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: go-service
+            port:
+              number: 80                     
