@@ -50,7 +50,7 @@ metadata:
     allow.http: "false"
 spec:
   rules:
-  - host: "go.rancher.felipetechlab.com"
+  - host: "go.felipetechlab.com"
     http:
       paths:
       - pathType: Prefix
